@@ -986,11 +986,13 @@
     
     if((viewMode == SDVReaderContentViewModeDoublePage)
        || (viewMode == SDVReaderContentViewModeCoverDoublePage)){
-        currentPage = [document.pageNumber integerValue];
+        currentPage = 0;//[document.pageNumber integerValue];
         [self handleLandscapeDoublePage];
     } else {
         [self updateContentSize:theScrollView]; // Update content size first
-        [self showDocumentPage:[document.pageNumber integerValue]]; // Show page
+        //[self showDocumentPage:[document.pageNumber integerValue]]; // Show page
+        [self showDocumentPage:1];
+        
     }
     
     document.lastOpen = [NSDate date]; // Update document last opened date
